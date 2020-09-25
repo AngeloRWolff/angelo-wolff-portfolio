@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import InputBox from '../components/class/input-components/InputBox';
-import InputArea from '../components/class/input-components/InputArea';
+import InputBox from '../components/input-components/InputBox';
+import InputArea from '../components/input-components/InputArea';
 import '..//components/class/input-components/Contact.css'
 var List = 
 {
