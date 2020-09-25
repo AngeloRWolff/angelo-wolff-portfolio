@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import GraphItem from '../components/graph-item/GraphItem';
 import FlipCard from '../components/flip-card/FlipCard';
 
-//image imports
+//svg imports
 import csIcon from '..//assets/svg/language-icons/csharp.svg';
 import javaIcon from '..//assets/svg/language-icons/java.svg'
 import pyIcon from '..//assets/svg/language-icons/python.svg'
@@ -13,6 +13,9 @@ import cppIcon from '..//assets/svg/language-icons/cpp.svg'
 import htmlIcon from '..//assets/svg/language-icons/html.svg'
 import cssIcon from '..//assets/svg/language-icons/css.svg'
 
+//png imports
+//import reactLogo from '../assets/images/'
+import databasesLogo from '../assets/images/databases.png'
 
 class Home extends Component {
   constructor(props, context) {
@@ -56,7 +59,15 @@ class Home extends Component {
         <GraphItem icon = {htmlIcon}  delay = {500} value = {45} duration = {1000}  title = 'HTML'/>
         <GraphItem icon = {cssIcon}   delay = {600} value = {40} duration = {1000}  title = 'CSS'/>   
         </div>
-        <FlipCard image = {null} title = {null} list = {null} />      
+
+        {this.greetingMessage()}
+        <div>
+        <FlipCard image = {databasesLogo} title = {"Databases"} itemlist = {['g', 'g', 'g', 'g',]} />
+        <FlipCard image = {databasesLogo} title = {"Databases"} itemlist = {['g', 'g', 'g', 'g',]} />
+        <FlipCard image = {databasesLogo} title = {"Databases"} itemlist = {['g','G','g','g']} /> 
+        <FlipCard image = {databasesLogo} title = {"Databases"} itemlist = {[' ',' ',' ',' ']} /> 
+          
+        </div> 
       </div>       
     );
   }
