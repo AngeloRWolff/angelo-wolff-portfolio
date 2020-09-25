@@ -1,131 +1,90 @@
 import React, { Component } from 'react';
-import './GraphItem.css'
 
-var progressObject = 
-{
-    //border: "2px solid #4061cf",
-    float: 'left',
-    textAlign: 'right',
-   
-    backgroundColor: "#355052",
-    marginTop: 5,
-    height: 30,
-    width: "0%",
-    borderRadius: "10px",
-    transitionDuration: "1s"
-}
-var titleStyle =
-{
-    position: 'absolute',
-    display: "inline-block",
-    float: 'left',
-   
-    fontSize: "19px",
-    textIndent: "5px",
-    color: 'white',   
-}
-var iconStyle = 
-{
-   zIndex: 100,
-    float: 'left',
-    opacity: 0,
-    position: 'absolute',
-   position: 'relative',
-   // display: 'inline-block',
-    width: "auto",
-    height: "100%",
-    marginLeft: "10px",
-   
-    transitionDuration: "1s"
+import {progressBar, iconStyle, titleStyle, labelStyle} from './GraphItem.styling.js';
+import {progressContainer, iconContainer, barContainer} from './GraphItem.containers.js'
 
-}
-var iconContainer={
-
-}
 class GraphItem extends Component {
     constructor(props, context) {
-        super(props, context);      
+        super(props, context);
         this.state =
         {
-            progress: progressObject,
-            iconS: iconStyle,
+            progressStyle: progressBar,
+            iconStyle: iconStyle,
         }
-        console.log(props)
     }
-    
-    createProgressBar()
-    {
-      var progressBar = React.createElement('div', {
-         id : this.state.id,
-         style: this.state.progress,       
-      }, this.createTitle(), this.createLabel())
-      return progressBar;
+
+    /*
+    create the progress bar that contains two child elements
+        1. the title of the language skillset
+        2. the label representing the value of the skillset
+    */
+    createProgressBar() {
+        var progress = React.createElement('div', {
+            style: this.state.progressStyle,
+        }, this.createTitle(), this.createLabel())
+        return progress
     }
-    createIcon()
-    {
+
+    //create the icon displayed for the language [source: props.icon]
+    createIcon() {
         var icon = React.createElement('img', {
             src: this.props.icon,
-            style: this.state.iconS
-             })
-        return icon;
+            style: this.state.iconStyle
+        })
+        return icon
     }
-    createTitle()
-    {
-        var title = React.createElement('div',{
-        style: titleStyle
+
+    //create the title of the language being displayed [source: props.title]
+    createTitle() {
+        var title = React.createElement('div', {
+            style: titleStyle
         }, this.props.title)
         return title
     }
-    createLabel()
-    {
+
+    //create the label of the value of skillset [source: props.value]
+    createLabel() {
         var label = React.createElement('div', {
-            className: 'labelG'
+            style: labelStyle
         }, this.props.value)
-
-        return label;
-    }
-    componentDidMount()
-    {
-        var delay = this.props.delay;
-        var value =  this.props.value;
-        setTimeout(function (){      
-            this.setState({
-                progress: {
-                  ...this.state.progress,
-                  width: (value) + '%'
-                }  
-            })
-            this.setState({
-                iconS: {
-                  ...this.state.iconS,
-                  opacity: 1
-                }  
-            })
-            
-        }.bind(this),delay)
+        return label
     }
 
+    /*
+    1. on component mount, we fetch the delay, and value for the graph
+    2. set a timeout using the delay in milliseconds
+    3. update the state of the progress bar with the value
+    4. update the state of the icon to visiible [opacity: 100%]
+    5. bind setTimeout to componenentDidMount
+    */
+    componentDidMount() {
+        var delay = this.props.delay; 
+        var value = this.props.value; 
+        setTimeout(function () {
+            this.setState({
+                progressStyle: {
+                    ...this.state.progressStyle,
+                    width: (value) + '%'
+                }
+            })
+            this.setState({
+                iconStyle: {
+                    ...this.state.iconStyle,
+                    opacity: 1
+                }
+            })
+        }.bind(this), delay)
+    }
+
+    //render the icon and progressbar within their containers 
     render() {
         return (
-            <div className = 'progressContainer'>
-                 
-            <div className = 'iconContainer'>
-           
-              {this.createIcon()}  
-              </div>
-              <div className = 'barContainer'>
-              {this.createProgressBar()}
-            
-              
-              </div>
+            <div style = {progressContainer}>
+                <div style={iconContainer}>{this.createIcon()}</div>                     
+                <div style={barContainer}>{this.createProgressBar()}</div>                
             </div>
         );
     }
-}
-
-function generateID()
-{
-    return Math.random();
 }
 
 export default GraphItem;
