@@ -1,0 +1,366 @@
+.App {
+  text-align: center;
+  padding: 0%;
+}
+.Auto{
+  width: 50px;
+  height: 40px;
+  float: none;
+ 
+}
+
+.Stretch{
+  display: block;
+}
+.Logo{
+ 
+   width: 30px;
+   height: 30px;
+  
+   
+}
+
+.Logo-Pad{
+   
+}
+.Red{
+  background-color: red;
+}
+.Background
+{
+ background-color: #0e819e;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 2s linear;
+  height: 40px;
+  width: 40px;
+  padding-top: 0;
+  padding-left: 0;
+  padding-bottom: 0;
+}
+
+.Animate{
+  animation: animate-in infinite 2s linear;
+}
+
+
+.App-header {
+  
+  background-color: #25232c;
+  
+  background-color: #2b2b2b;
+
+
+}
+
+
+.Snake{
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+  display: inline-block;
+  background-color: rgb(62, 147, 173);
+
+}
+
+.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+ 
+  display: block;
+  padding: 0px;
+}
+.Fit{
+  width: 100%;
+  height: 93%;
+  float: left;
+  position: absolute;
+  background-position-x: 0;
+  background-position-y: 0;
+  z-index: -100;
+  background-color: #232323;
+  display: block;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  cursor: default;
+}
+
+
+
+
+.BS{
+  width: 50px;
+  height: 30px;
+  background-color: #0e819e;
+}
+
+.ProjectView
+{
+  position: inherit;
+  text-align: center;
+  font-size: larger; 
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+
+
+}
+
+
+
+.ProjectView:hover
+{
+  animation: ProjectViewhover ease-in-out 0.5s normal forwards;
+}
+
+@keyframes ProjectViewhover{
+  to{
+    background-color: aqua;
+  }
+
+}
+
+/* Style the links inside the navigation bar */
+
+.a{
+
+}
+/* Change the color of links on hover */
+a:link, a:visited {
+  border: #be2121;
+  color: #FFFFFF;
+  font-weight: normal;
+  padding: 20px 40px;
+  text-align: center;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  text-decoration: #7a0202; 
+  font-size: 16px;
+  cursor: pointer;
+  background-size:contain;
+  display: inline-block;
+  
+}
+
+
+
+.canvas:hover
+{
+  
+}
+a:hover, a:active {
+  background-color: #0b5568;
+}
+.seperator{
+  width: 100%;
+  height: 5px;
+  background-color: #54575c;
+}
+
+.Fadein-top{
+  animation: fadein-top ease-in-out 1s;
+  
+
+}
+@keyframes fadein-top{
+  from{
+    opacity:0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-0);  
+  }
+}
+
+.Fadein-left{
+  animation: fadein-left ease-out 1s;
+}
+@keyframes fadein-left{
+  from{
+    opacity:0;
+    transform: translateX(-100px);   
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-0);
+    
+  }
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Pbar{
+  height: 50px;
+  width: 5%;
+  background-color: #0b5568;
+  transition: all .5s linear;
+}
+body {
+  background-color: #232323;
+  overflow-x: hidden;
+}
+
+@keyframes bubble{
+from{
+  margin-top: 110%;
+}
+to{
+  margin-top: -20%;
+  margin-left: 10%;
+}
+}
+
+.Circle{
+  opacity: 0.5;
+  width: 50%;
+  padding-top: 50%;
+  background-color: rgb(41, 61, 128);
+  border-radius: 50%;
+  display: inline-block;
+  animation: bubble ease-in-out infinite 10s;
+  position: absolute;
+  z-index: -100;
+  position: relative;
+}
+
+.example::-webkit-scrollbar {
+  display: none;
+}
+.example {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
+.x {
+  
+}
+
+.y {
+
+  animation: x 13s linear infinite alternate;
+  display: block;
+  
+
+  
+ 
+ 
+}
+
+@keyframes x {
+  100% {
+    transform: translateX( calc(100vw - 100px ));
+  }
+}
+
+@keyframes y {
+  100% {
+    transform: translateY( calc(100vh - 100px));
+  }
+}
+
+.StartGame{
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  
+  display: block;
+ 
+  background-color: #0b5568;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+
+}
+
+.StartGame:hover, .StartGame:active{
+  animation: StartGameAnimation forwards 2s;
+}
+
+
+
+@keyframes StartGameAnimation{
+  from{
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    
+    display: block;
+  
+    background-color: #0b5568;
+  }
+  to{
+    background-color: #909e0e;
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    
+    display: block;
+  }
+}
+.bubble{
+  border-radius: 30%;
+  padding: 50px;
+  margin-left: 20px;
+  margin-top: 20px;
+  background-color: #20aed1;
+  display: inline-block;
+  width: 45px;
+}
+
+.select{
+  border-radius: 30%;
+  padding: 50px;
+  margin-left: 20px;
+  margin-top: 20px;
+  background-color: #b1d120;
+  display: inline-block;
+  width: 45px;
+}
+.greeting{
+  display: inline;
+  color: beige;
+  
+}
+
+.name{
+  display: inline;
+  color: #20aed1;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.diamond-narrow {
+  width: 40px;
+  height: 40px;
+  margin-left: 20%;
+  display: block;
+  background-position-x: right;
+  border-radius: 50%;
+  background-color: #d6be37;
+}
+
+
+
+

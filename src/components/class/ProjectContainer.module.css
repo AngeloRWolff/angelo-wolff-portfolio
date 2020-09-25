@@ -1,0 +1,14 @@
+
+.AnimateCenter{
+        padding: 20px;
+        width: 200px;
+        height: 150px;
+  }
+  @keyframes animateCenter{
+    from{
+      position: relative;
+    }
+    to {
+        
+    }
+  }

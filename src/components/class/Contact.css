@@ -1,0 +1,110 @@
+.form {
+    margin-top: auto;
+    display: inline-block;
+    height: 40px;
+    border-radius: 5px;
+    max-width: 400px;
+    width: 100%;  
+   
+  }
+  
+  .input-field{
+    text-indent: 15px;
+    text-align: left;
+    color: antiquewhite;
+    width: 80%;
+    text-rendering: auto;
+    height: 25px;  
+    cursor: auto;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    background-color: rgb(88, 88, 88);
+    transition-duration: 0.2s;
+   }
+
+  .input-area
+  {
+    text-indent: 15px;
+    resize: vertical;
+    text-indent: 15px;
+    text-align: left;
+    color: antiquewhite;
+    width: 80%;
+    min-height  : 75px;
+    height: 75px;  
+    cursor: auto;
+    border: none;
+    outline: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: rgb(88, 88, 88);
+    max-width: 400px;
+    transition-duration: 0.2;
+  }
+
+  .input-field:-webkit-autofill
+  {
+    box-shadow: 0 0 0px 1px rgb(88, 88, 88) inset;
+    -webkit-box-shadow: 0 0 0px 2000px rgb(88, 88, 88) inset;
+   background-color: #26ad5a;
+   background-color: transparent;
+  }
+  .input-area:focus
+  {
+    caret-color: darkslategrey;
+    background-color: floralwhite;
+    color: grey;
+    box-shadow: 0 0 0px 1px floralwhite inset;
+    -webkit-box-shadow: 0 0 0px 100px floralwhite inset;
+
+  }
+
+   input {
+    caret-color:#232323 ;   
+   }
+
+   .submit
+   {
+     margin-top: 5px;
+     border: none;
+     border-radius: 5px;
+     background-color: grey;
+     width: 100px;
+     height: 25px;
+     outline: none;  
+     transition-duration: 0.3s; 
+   }
+   .outline
+   {
+   
+     
+   }
+   .submit:hover{   
+     background-color: rgb(2, 168, 173);
+   }
+   .submit:active
+   {
+    background-color: #26ad5a;
+   }
+  
+   
+   .input-field:focus
+   {
+     cursor: auto;
+     font-size: 15px;
+     color: grey;
+     height: 30px;
+     width: 85%;
+     background-color: floralwhite;
+     box-shadow: 0 0 0px 1px floralwhite inset;
+     -webkit-box-shadow: 0 0 0px 100px floralwhite inset;
+   } 
+
+  .input-label{    
+    color: aquamarine;
+    top: 0;
+   }  
+  
+
+  

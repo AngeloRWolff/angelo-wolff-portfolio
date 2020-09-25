@@ -1,0 +1,47 @@
+.AnimateIn{
+    animation: bob forwards 2s;
+    width: 500px;
+    height: 500px;
+    display: inline-block;
+    background-color: aqua;
+}
+.MainBlock
+{
+  width: 200px;
+  height: 200px;
+  background-color: rgb(20, 20, 20);
+  display: inline-block;
+  transition-duration: 2s;
+  animation: bob 2s;
+}
+
+.LeftBlock
+{
+  opacity: 0.5;
+  width: 200px;
+  height: 200px;
+  transform: translateX(+60px);
+  background-color:  rgb(20, 20, 20);
+  display: inline-block;
+  transition-duration: 2s;
+}
+.RightBlock
+{
+  opacity: 0.5;
+  width: 200px;
+  height: 200px;
+  background-color:  rgb(20, 20, 20);
+  display: inline-block;
+  transition-duration: 2s;
+}
+@keyframes bob{
+    from{
+        opacity:0;
+        transform: translateX(-100px);   
+      }
+      to {
+        opacity: 1;
+        transform: translateX(-0);
+        
+      }
+}

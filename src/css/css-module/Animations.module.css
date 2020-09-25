@@ -1,0 +1,29 @@
+.FadeLeft{
+        position: inherit;
+        text-align: center;
+        font-size: larger; 
+        border-radius: 25px;
+        background: #73AD21;
+        padding: 20px;
+        width: 200px;
+        height: 150px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+        animation: fadeleft ease-in-out 2s; 
+  }
+  @keyframes fadeleft{
+    from{
+      opacity:0;
+      transform: translateX(-100px);   
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-0);
+      
+    }
+  }
+
+  .center {
+    
+  }
