@@ -1,6 +1,6 @@
 import React, { Component, createElement } from 'react';
-import '../css/App.css'
-import BubbleAnimation from '../components/class/BubbleAnimation';
+import '..//App.css'
+
 import { render } from 'react-dom';
 
 function CreateTrail(e)

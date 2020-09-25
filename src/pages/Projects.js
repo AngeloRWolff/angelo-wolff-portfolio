@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import '../css/App.css'
+import '..//App.css'
 
 import ProjectState from '../components/state/ProjectState.js';
 import ProjectData from '..//components/data/project.data';
 import projectData from '..//components/data/project.data';
-import ContentCycle from '../components/class/ContentCycle'
+import ContentCycle from '..//components/project-container/ContentCycle'
 class Projects extends Component {
   constructor(props, context) {
     console.log(ProjectData);

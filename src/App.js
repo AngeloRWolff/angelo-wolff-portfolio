@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './css/App.css';
+import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Idle from './pages/Idle';
 import About from './pages/About';

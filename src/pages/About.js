@@ -1,15 +1,17 @@
 // Home.js
 import React, { Component } from 'react';
-import LikeBox from '../components/class/LikeBox';
-import GraphItem from '../components/class/GraphItem';
-import csIcon from '..//assets/svg/csharp.svg';
-import javaIcon from '..//assets/svg/java.svg'
-import pyIcon from '..//assets/svg/python.svg'
-import jsIcon from '..//assets/svg/javascript.svg'
-import cppIcon from '..//assets/svg/cpp.svg'
-import htmlIcon from '..//assets/svg/html.svg'
-import cssIcon from '..//assets/svg/css.svg'
-import FlipCard from '../components/class/FlipCard';
+
+import GraphItem from '../components/graph-item/GraphItem';
+import FlipCard from '../components/flip-card/FlipCard';
+
+import csIcon from '..//assets/svg/language-icons/csharp.svg';
+import javaIcon from '..//assets/svg/language-icons/java.svg'
+import pyIcon from '..//assets/svg/language-icons/python.svg'
+import jsIcon from '..//assets/svg/language-icons/javascript.svg'
+import cppIcon from '..//assets/svg/language-icons/cpp.svg'
+import htmlIcon from '..//assets/svg/language-icons/html.svg'
+import cssIcon from '..//assets/svg/language-icons/css.svg'
+
 
 class Home extends Component {
   constructor(props, context) {

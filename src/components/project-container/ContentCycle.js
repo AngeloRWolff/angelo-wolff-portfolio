@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './View.css'
+
 var styleCanvas = {
     width: 300,
     height: 300,

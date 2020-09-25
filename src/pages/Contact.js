@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import InputBox from '../components/class/InputBox';
-import InputArea from '../components/class/InputArea';
-import '..//components/class/Contact.css'
+import InputBox from '../components/class/input-components/InputBox';
+import InputArea from '../components/class/input-components/InputArea';
+import '..//components/class/input-components/Contact.css'
 var List = 
 {
     ListItem1:{
