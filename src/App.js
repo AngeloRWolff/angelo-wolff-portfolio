@@ -1,34 +1,38 @@
 import React, { Component } from 'react';
-import './App.css';
-import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
-import { BrowserRouter as Router,Switch, Route, Link } from 'react-router-dom';
-import Idle from './pages/Idle.js';
-import About from './pages/About';
-import Projects from './pages/Projects';
-import Contact from './pages/Contact';
+import { Route } from 'react-router';
+import { Layout } from './pages/Layout';
+import  Idle  from './pages/Idle';
+import  About  from './pages/About';
+import Projects  from './pages/Projects';
 
+export default class App extends Component {
+  static displayName = Layout.name;
 
-function App() {
-  return (
-    <div>
-      <Router>
+  render () {
+    return (
+      <Layout>
         <Route exact path='/' component={Idle} />
-        <Route path='/about' component={About} />
-        <Route path='/projects' component={Projects} />
-        <Route path='/contact' component={Contact} />
-   
-      <NavItem>
-      <NavLink tag={Link} className="text-dark" to="/">Home</NavLink>
-      </NavItem>
-     <NavItem>
-      <NavLink tag={Link} className="text-dark" to="/about">Counter</NavLink>
-     </NavItem>
-     <NavItem>
-      <NavLink tag={Link} className="text-dark" to="/projects">Fetch data</NavLink>
-      </NavItem>
-     </Router>
-    </div>
-    )
+        <Route path='/counter' component={About} />
+        <Route path='/fetch-data' component={Projects} />
+      </Layout>
+    );
   }
-  
-export default App;
+}
+
+/*
+
+<ul className="App-header Fadein-top">  
+            <Link to={'/about'} className="Fadein-top"> About</Link>           
+            <Link to={'/projects'} className="Fadein-top">Projects</Link>
+            <Link to={'/contact'} className="Fadein-top">Contact </Link>
+          </ul>
+          <Switch>      
+            <Route exact path='/' component={Idle} /> 
+            <Route path='/about' component={About} />
+            <Route path='/projects' component={Projects} />
+            <Route path='/contact' component={Contact}/>               
+          </Switch>
+
+
+*/
+//export default App;
