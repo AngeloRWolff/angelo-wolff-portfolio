@@ -18,3 +18,4 @@ export const animationSpeed = {
     slow: '2s',
     verySlow: '2.8s'
 };
+

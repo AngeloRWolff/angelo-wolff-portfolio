@@ -175,8 +175,7 @@ class FlipCard extends Component {
             var list = React.createElement('div', {
                 style: {
                     display: 'inline-block',
-                    position: 'relative',
-                 
+                    position: 'relative',  
                 }
             }, element)
             listItems.push(list);
