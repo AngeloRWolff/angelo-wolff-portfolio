@@ -1,17 +1,57 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Idle from './pages/Idle';
+import { BrowserRouter as Router,Switch, Route, Link } from 'react-router-dom';
+import Idle from './pages/Idle.js';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 
-function App() {
-  return (
-    <div className="App">
-      
-        <div>   
-          <ul className="App-header Fadein-top">  
+
+class App extends Component {
+
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      page: Idle
+    }
+  }
+  
+  render() {
+    return (
+      <Router>
+      <div>
+        <ul>
+          <li>
+            <Link to="/contact">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/projects">Projects</Link>
+          </li>
+        </ul>
+
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/projects">
+            <Projects />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );  
+  }
+}
+
+/*
+
+<ul className="App-header Fadein-top">  
             <Link to={'/about'} className="Fadein-top"> About</Link>           
             <Link to={'/projects'} className="Fadein-top">Projects</Link>
             <Link to={'/contact'} className="Fadein-top">Contact </Link>
@@ -22,10 +62,7 @@ function App() {
             <Route path='/projects' component={Projects} />
             <Route path='/contact' component={Contact}/>               
           </Switch>
-        </div>
-  
-    </div>
-  );
-}
 
+
+*/
 export default App;
