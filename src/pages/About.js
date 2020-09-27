@@ -63,7 +63,7 @@ class Home extends Component {
         {this.greetingMessage()}
         <div>
         <FlipCard image = {databasesLogo} title = {"Databases"} itemlist = {['Helow', 'World', 'g', 'g',]} />
-        <FlipCard image = {databasesLogo} title = {"Databases"} itemlist = {['g', 'g', 'g', 'g',]} />
+        <FlipCard image = {databasesLogo} title = {"Databases"} itemlist = {['g', 'bigfat', 'g', 'g',]} />
         <FlipCard image = {databasesLogo} title = {"Databases"} itemlist = {['g','G','g','g']} /> 
         <FlipCard image = {databasesLogo} title = {"Databases"} itemlist = {[' ',' ',' ',' ']} /> 
           
