@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 //component imports
 import GraphItem from '../components/graph-item/GraphItem';
 import FlipCard from '../components/flip-card/FlipCard';
-
+import Menu from '../components/menu'
 //svg imports
 import csIcon from '..//assets/svg/language-icons/csharp.svg';
 import javaIcon from '..//assets/svg/language-icons/java.svg'
@@ -25,10 +25,10 @@ class Home extends Component {
   //create welcome message to introduce language skillset
   greetingMessage(){
     return (
-    <div style = {{marginTop: "40px"}}>
-      <h3 className = "greeting">Hey there, my name is</h3>
-      <h3 className = "name"> Angelo</h3>
-      <h3 className = "greeting">, I really enjoy working on</h3>
+    <div>
+      <div className = "greeting">My</div>
+      <div className = "name"> Technology Skillset...</div>
+      
     </div>
     )
   }
@@ -38,9 +38,9 @@ class Home extends Component {
   {
     return (
       <div style = {{marginTop: "40px"}}>
-      <h3 className = "greeting">Take a look at what</h3>
-      <h3 className = "name"> languages </h3>
-      <h3 className = "greeting">I know</h3>
+      <div className = "greeting">My</div>
+      <div className = "name"> language skillset</div>
+     
     </div>
     )
   }
@@ -49,6 +49,8 @@ class Home extends Component {
   render() {
     return (
       <div>
+      
+      <div style = {{textAlign: 'center', height: window.innerHeight, minHeight: '600px', }}>
         {this.languageSkillsetMessage()}
         <div>
         <GraphItem icon = {csIcon}    delay = {0}   value = {95} duration = {1000}  title = 'C#'/>
@@ -60,15 +62,16 @@ class Home extends Component {
         <GraphItem icon = {cssIcon}   delay = {600} value = {40} duration = {1000}  title = 'CSS'/>   
         </div>
 
+       
+        <div style = {{paddingTop : "10%"}}>
         {this.greetingMessage()}
-        <div>
         <FlipCard image = {databasesLogo} title = {"Databases"} itemlist = {['Helow', 'World', 'g', 'g',]} />
         <FlipCard image = {databasesLogo} title = {"Databases"} itemlist = {['g', 'bigfat', 'g', 'g',]} />
         <FlipCard image = {databasesLogo} title = {"Databases"} itemlist = {['g','G','g','g']} /> 
-        <FlipCard image = {databasesLogo} title = {"Databases"} itemlist = {[' ',' ',' ',' ']} /> 
-          
+        <FlipCard image = {databasesLogo} title = {"Databases"} itemlist = {[' ',' ',' ',' ']} />       
         </div> 
-      </div>       
+      </div>  
+      </div>     
     );
   }
 }

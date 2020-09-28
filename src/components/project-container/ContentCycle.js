@@ -197,7 +197,7 @@ class ContentCycle extends Component {
 
     render() {
         return (
-            <div>
+            <div style = {{textAlign: 'center'}}>
                 <div>{}</div>
                 <div>{this.buildBox()}</div>
                 <div>{this._renderNavButtons()}</div>

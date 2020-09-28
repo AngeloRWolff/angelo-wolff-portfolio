@@ -126,6 +126,7 @@ class Projects extends Component {
   render() {
     return (
       <div>
+        
         {this.buildLeftNavigation()}{this.buildProjectHeader()}{this.buildRightNavigation()}
 
         <div>

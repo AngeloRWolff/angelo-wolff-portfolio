@@ -164,16 +164,16 @@ class Idle extends Component {
         animationBlock.style.height = `${size}px`;
         animationBlock.style.left= location.xLoc + "px";
         animationBlock.style.top = location.yLoc + "px";
-        animationBlock.style.zIndex = 100;
-      
-        context.appendChild(animationBlock);
+        animationBlock.style.zIndex = -100;
+        
+        document.body.append(animationBlock);
         fadeAnimation(animationBlock);
         }
         catch{
 
         };
         //alert(`${context.clientWidth} x ${context.clientHeight}`);
-        },50);
+        },250);
     }
 
     
@@ -193,11 +193,11 @@ class Idle extends Component {
         const y = this.state.y;
         const gameOn = this.state.gameOn;
         return (
-            <div>
+            <div style = {{height : '20px'}}>
             <div id= "coords"></div>
-            <div className = "Fit" id = "context"></div>
+         
        
-            <div onClick = {this._startGame} className = "StartGame">Click To Start Game</div>  
+             
             <button onClick = {this._startAnimation}>Click To Start Animation</button>       
             {this.state.gameOn ? <div id = "touchpane" style = {{opacity : "0%"}} className = "Fit" onMouseMove={this._onMouseMove.bind(this)}> </div> : null}
 
@@ -220,7 +220,7 @@ function getRandomLocation(width, height)
 {
     var location = {
         xLoc: Math.random()*width,
-        yLoc: Math.random()*height
+        yLoc: document.documentElement.scrollTop + Math.random()*height
     }
     return location;
 }
