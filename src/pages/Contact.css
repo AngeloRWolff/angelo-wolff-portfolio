@@ -1,0 +1,113 @@
+.form {
+    height: auto;
+    width: 100%;
+    margin-top: 7px;
+  }
+  
+  .input-field{
+    
+
+    padding-left: 5px;
+    font-size: 15px;
+    color: rgb(97, 97, 97);
+    width: 80%;
+    height: 25px;  
+    cursor: auto;
+    border: none;
+    outline: none;
+
+    border-radius: 2px;
+    background-color: rgb(233, 232, 232);
+    transition-duration: 0.2s;
+    max-width: 300px;
+   }
+
+   .test{
+     background-color: #008bc2;
+   }
+  .input-area
+  {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+
+  
+    resize: vertical;
+    padding-left: 5px;
+    text-align: left;
+    color: rgb(58, 58, 58);
+    width: 80%;
+    min-height  : 75px;
+    height: 75px;  
+    cursor: auto;
+    border: none;
+    outline: none;
+    outline: none;
+    border-radius: 2px;
+   
+    background-color: rgb(226, 226, 226);
+    max-width: 300px;
+    transition-duration: 0.2;
+  }
+
+ 
+  .input-area:focus
+  {
+    caret-color: darkslategrey;
+    background-color: floralwhite;
+    color: rgb(58, 58, 58);
+    box-shadow: 0 0 0px 1px floralwhite inset;
+    -webkit-box-shadow: 0 0 0px 100px floralwhite inset;
+
+  }
+
+   input {
+    caret-color:#232323 ;   
+   }
+
+   .submit
+   {
+    font-family: Arial, Helvetica, sans-serif;
+     margin-top: 5px;
+     border: none;
+     border-radius: 5px;
+     background-color: grey;
+     width: 100px;
+     height: 25px;
+     outline: none;  
+     transition-duration: 0.3s; 
+   }
+   .outline
+   {
+   
+     
+   }
+   .submit:hover{   
+     background-color: rgb(2, 168, 173);
+   }
+   .submit:active
+   {
+    background-color: #26ad5a;
+   }
+  
+   .link{
+     color: #008bc2;
+   }
+   .input-field:focus
+   {
+     cursor: auto;
+     font-size: 15px;
+     color: grey;
+     height: 25px;
+     width: 81%;
+     background-color: rgb(223, 223, 223);
+     box-shadow: 5 5 5px 1px rgb(255, 255, 255) inset;
+     -webkit-box-shadow: 0 0 0px 100px floralwhite inset;
+   } 
+
+  .input-label{    
+    color: aquamarine;
+    top: 0;
+   }  
+  
+
+  

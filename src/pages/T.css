@@ -1,0 +1,65 @@
+.in{
+    width: 300px;
+    height: 200px;
+    background-color: aquamarine;
+    animation: fade 2s forwards;
+    transition-duration: 2s;
+    opacity: 0; 
+    display: inline-block;
+
+
+}
+.nav-right{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.header{
+    min-width: 200px;
+    width: 50%;
+    max-width: 400px;
+    transform: translateY(-25px);
+    position: relative;
+    display: inline-block;
+    font-size: 25px;
+    border-radius: 20px;
+    
+    background-color: rgb(48, 48, 48);
+    color: rgb(220, 220, 220);
+  
+}
+.description{
+    border-radius: 10px;
+    color: rgb(210, 210, 210);
+    display: inline-block;
+    min-width: 350px;
+    width: 50%;
+    max-width: 400px;
+    
+}
+.img-nav-right{
+    position: relative;
+    margin-top: 10px;
+    width: 71px;
+    height: 71px;
+   
+}
+
+.img-nav-left{
+   
+    margin-top: 10px;
+    width: 71px;
+    height: 71px;
+}
+
+.nav-banner{  
+       
+}
+@keyframes fade{
+   
+    to{
+        opacity: 1;
+       
+    }
+}

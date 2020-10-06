@@ -3,28 +3,37 @@ module.exports = {
     leftNav: {
         width: 60,
         height: 60,
-        borderRadius: "50%",
+        borderRadius: "50px",
         backgroundColor: `${headerElementDefaultBackColor}`,
         display: "inline-block",
-        transitionDuration: "1s"
+        transitionDuration: "1s",
+        overflowY: "auto",
+        leftMargin: 'auto',
     },
    
     rightNav: {
+ 
         width: 60,
         height: 60,
-        borderRadius: "50%",
+        borderRadius: "50px",
         backgroundColor: `${headerElementDefaultBackColor}`,
         display: "inline-block",
-        transitionDuration: "1s"
+        transitionDuration: "1s",
+        overflowY: "auto",
+        
+      
     },
     
     
     headerNav: {
-        width: 60,
+      
+        textAlign: 'center',
+        width: 200,
         height: 60,
-        borderRadius: "50%",
+        borderRadius: "50px",
         backgroundColor: `${headerElementDefaultBackColor}`,
-        display: "inline-block"
+        display: "inline-block",
+        overflowY: "auto"
     },
     
     currentData: {

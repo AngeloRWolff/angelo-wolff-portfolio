@@ -4,7 +4,7 @@ import './FlipCard.css'
 
 
 var cardContainer = {
-    display: 'inline-block',
+    
     width: 160,
     height: 200,
     borderRadius: "20px",
@@ -17,6 +17,7 @@ var cardContainer = {
 }
 
 var frontCard = {
+    
     transform: 'rotateY(180deg)',
     position: 'absolute',
     display: 'inline-block',
@@ -173,10 +174,7 @@ class FlipCard extends Component {
             if (element!= '' || element != null)
             {
             var list = React.createElement('div', {
-                style: {
-                    display: 'inline-block',
-                    position: 'relative',  
-                }
+                
             }, element)
             listItems.push(list);
         }

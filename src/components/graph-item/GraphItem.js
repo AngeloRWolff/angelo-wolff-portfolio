@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Index from '..//..//index'
 import {progressBar, iconStyle, titleStyle, labelStyle} from './GraphItem.styling.js';
 import {progressContainer, iconContainer, barContainer} from './GraphItem.containers.js'
 
@@ -10,9 +10,27 @@ class GraphItem extends Component {
         {
             progressStyle: progressBar,
             iconStyle: iconStyle,
+            isInView: false,
         }
+        this.checkView()
     }
 
+    checkView()
+    {
+        //var g = React.findDOMNode(this.refs.aboutpage).value   
+       
+       var check =  setInterval(function () {
+           var g =  document.getElementById('graph').getBoundingClientRect()
+           //console.log(g)
+            if (g.y -500 < 0)
+            {
+                this.setState({isInView: true})
+                clearInterval(check);
+            }
+        
+           
+        }.bind(this), 100)
+    }
     /*
     create the progress bar that contains two child elements
         1. the title of the language skillset
@@ -60,7 +78,12 @@ class GraphItem extends Component {
     componentDidMount() {
         var delay = this.props.delay; 
         var value = this.props.value; 
-        setTimeout(function () {
+        
+       var checkView =  setInterval(function () {
+
+            if (this.state.isInView == true)
+            {
+                setInterval(function () {    
             this.setState({
                 progressStyle: {
                     ...this.state.progressStyle,
@@ -73,7 +96,10 @@ class GraphItem extends Component {
                     opacity: 1
                 }
             })
+            clearInterval(checkView);
         }.bind(this), delay)
+            }
+        }.bind(this), 100)
     }
 
     //render the icon and progressbar within their containers 

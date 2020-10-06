@@ -1,0 +1,32 @@
+.nav-container{
+    width: 100%;
+    height: 80px;
+    background-color: aqua;
+}
+.nav-circle{
+    display: inline-block;
+    border-radius: 50%;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    overflow-y: auto;
+}
+audio{
+    background-color: antiquewhite;
+}
+.progressBackgroundBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.nav-header{
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: black;
+    overflow-y: auto;
+}

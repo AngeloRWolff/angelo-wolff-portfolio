@@ -3,61 +3,39 @@ import '..//App.css'
 
 import { render } from 'react-dom';
 
-function CreateTrail(e)
-{
-  console.log(e)
+
+import githubIcon from '../assets/images/githubContactIcon.png';
+import facebookIcon from '../assets/images/facebookContactIcon.png';
+import youtubeIcon from '../assets/images/youtubeContactIcon.png';
+
+import name from '..//assets/audio/name.mp3'
+
+import voiceIcon from '..//assets/images/voice.png'
+
+import downloadIcon from '..//assets/svg/download.svg'
+function CreateTrail(e) {
+    console.log(e)
 }
 
-function enlight()
-{
+function enlight() {
 
 }
-function garbageMouseOver()
-{
+function garbageMouseOver() {
     alert('you entered');
 }
-function collideInto(element)
-{
-   
+function collideInto(element) {
+
 }
 
 
 
-function Tail2()
-{
-    var timer = setInterval(()=>
-    {
-        //get location
-        //thro wthingy
-    }, 10)
-}
 
-function Tail(x, y) {
-    var canemit = false;
-    var context = document.getElementById('context');
-    var tailElement = document.createElement('gh');
-    var width = tailElement.style.width;
-    var height = tailElement.style.height;
-  
-    tailElement.id = "head"
-    tailElement.style.width = "30px";
-    tailElement.style.position = "absolute"
-    tailElement.style.backgroundColor = headPointerColor;
-    tailElement.style.height = "30px";
-    tailElement.style.left= x-15 + "px";
-    tailElement.style.top = y +15 + "px";
-    tailElement.style.borderRadius = "50%"
 
-    context.appendChild(tailElement);
-    destroyOverTime(tailElement);
- 
-    
-}
 function destroyOverTime(element) {
     element.id = "tail";
     var opacity = 1;  // initial opacity
     var timer = setInterval(function () {
-        if (opacity <= 0.1){
+        if (opacity <= 0.1) {
             clearInterval(timer);
             //element.style.display = 'none';
             element.remove();
@@ -68,187 +46,272 @@ function destroyOverTime(element) {
     }, 75);
 }
 
-var nibbleSpawnInterval = 3000;
-var headPointerColor = "#0e819e"
-function _spawnNibbles()
-{
-    var timer = setInterval(function () {
-    var context = document.getElementById('context');
-    var nibbleElement = document.createElement('nib');
-    var size = getRandomSize(context.clientHeight, context.clientWidth);
-    var location = getRandomLocation(context.clientWidth,context.clientHeight);
-   // console.log(size);
-    nibbleElement.style.width = `40px`;
-    nibbleElement.style.position = "absolute"
-    nibbleElement.style.backgroundColor = "#d6be37"
-    nibbleElement.style.height = `40px`;
-    nibbleElement.style.borderRadius = "50%";
-    
-    nibbleElement.addEventListener("mouseenter", function()
-    {
-        nibbleElement.style.backgroundColor = "#ffffff"
-        nibbleElement.remove();
-    })
-    nibbleElement.style.left= location.xLoc + "px";
-    nibbleElement.style.top = location.yLoc + "px";
-    nibbleElement.style.zIndex = 200;
-    console.log("Spawned a nibble");
-    context.appendChild(nibbleElement);
-   // fadeAnimation(nibbleElement);
-    },nibbleSpawnInterval)
+
+var gitHubElementContainer = {
+    width: '100%',
+    height: '40px',
+    marginTop: '5px',
+    borderRadius: '5px',
+    backgroundColor: '#333333',
 }
 
-function _eatNibble(nibbleElement)
-{
+var inText = {
+    color : 'rgb(220,220,220)'
+}
+var nibbleSpawnInterval = 3000;
+var headPointerColor = "#0e819e"
+function _spawnNibbles() {
+    var timer = setInterval(function () {
+        var context = document.getElementById('context');
+        var nibbleElement = document.createElement('nib');
+        var size = getRandomSize(context.clientHeight, context.clientWidth);
+        var location = getRandomLocation(context.clientWidth, context.clientHeight);
+        // console.log(size);
+        nibbleElement.style.width = `40px`;
+        nibbleElement.style.position = "absolute"
+        nibbleElement.style.backgroundColor = "#d6be37"
+        nibbleElement.style.height = `40px`;
+        nibbleElement.style.borderRadius = "50%";
+
+        nibbleElement.addEventListener("mouseenter", function () {
+            nibbleElement.style.backgroundColor = "#ffffff"
+            nibbleElement.remove();
+        })
+        nibbleElement.style.left = location.xLoc + "px";
+        nibbleElement.style.top = location.yLoc + "px";
+        nibbleElement.style.zIndex = 200;
+        console.log("Spawned a nibble");
+        context.appendChild(nibbleElement);
+        // fadeAnimation(nibbleElement);
+    }, nibbleSpawnInterval)
+}
+
+function _eatNibble(nibbleElement) {
     nibbleElement.style.backgroundColor = "#0b5568"
-   
+
 }
 
 class Idle extends Component {
 
-   constructor(props, context) {
-       super(props, context);
+    constructor(props, context) {
+        super(props, context);
 
-    this.state = {x: 0, y: 0, gameOn:false};
-    this.onFormSubmit = this.onFormSubmit.bind(this);
-    this._startGame = this._startGame.bind(this);
-    this._startAnimation = this._startAnimation.bind(this);
-    this._endGame = this._endGame.bind(this);
-   }
-
-   onFormSubmit() {
-    alert("Form Submitted" + this.state.gameOn);
-    this.state.gameOn = true;
-
-  }
-
-      _startGame() {
-      
-        _spawnNibbles();  
-        if (this.state.gameOn == true)
-        {
-        this.state.gameOn = false;
-        document.body.style.cursor = 'default';
-        }
-        else
-        {        
-        this.state.gameOn = true;
-        //document.body.style.cursor = 'none';
-        }
-        this.forceUpdate();   
-               
+        this.state = {
+            x: 0,
+            y: 0,
+            gameOn: false,
+            hitHubElements: 'Test',
         };
+        this.onFormSubmit = this.onFormSubmit.bind(this);
+        this.play = this.play.bind(this);
+        this._startAnimation = this._startAnimation.bind(this);
+        this.gitHubLinkClick = this.gitHubLinkClick.bind(this);
+        this.fetchGithub();
 
-     
-
-        _endGame()
-        {
-            this.state.gameOn = false;
-        }
-   
-    
-    _startAnimation()
-    {
-        
-        var timer = setInterval(function () {
-            try
-        {
-        var context = document.getElementById('context');
-        var animationBlock = document.createElement('gh');
-        var size = getRandomSize(context.clientHeight, context.clientWidth);
-        var location = getRandomLocation(context.clientWidth,context.clientHeight);
-       // console.log(size);
-        animationBlock.style.width = `${size}px`;
-        animationBlock.style.position = "absolute"
-        animationBlock.style.backgroundColor = "#25232c"
-        animationBlock.style.height = `${size}px`;
-        animationBlock.style.left= location.xLoc + "px";
-        animationBlock.style.top = location.yLoc + "px";
-        animationBlock.style.zIndex = -100;
-        
-        document.body.append(animationBlock);
-        fadeAnimation(animationBlock);
-        }
-        catch{
-
-        };
-        //alert(`${context.clientWidth} x ${context.clientHeight}`);
-        },250);
     }
 
-    
-  
-   
-   _onMouseMove(e){
-    var bounds = e.target.getBoundingClientRect();
-    var x = e.clientX - bounds.left;
-    var y = e.clientY - bounds.top;
-       this.setState({x: x, y: y})
-       Tail(x, y);
-   }
+    onFormSubmit() {
+        alert("Form Submitted" + this.state.gameOn);
+        this.state.gameOn = true;
+
+    }
 
 
+    openPage(link) {
+        window.open(link, '_blank')
+    }
+
+    gitHubTitle(title) {
+        return React.createElement('div', {
+            style: {
+
+                display: 'inline-block',
+                color: 'rgb(220,220,220)',
+                width: '75%',
+                height: '20px',
+                textAlign: 'right',
+                transform: 'translateX(-5px)'
+            }
+        }, title)
+    }
+    gitHubLinkClick(link) {
+        this.openPage(link);
+        console.log("link");
+        console.log(link);
+    }
+    gitHubLink(link) {
+        return React.createElement('button', {
+            style: {
+                width: '25%',
+                height: '100%',
+                border: 0,
+                borderRadius: '5px',
+                textAlign: 'center',
+                color: 'rgb(220,220,220)',
+                backgroundColor: '#2e5f75',
+
+            },
+            onClick: () => this.gitHubLinkClick(link)
+        }, 'View')
+    }
+    fetchGithub() {
+        fetch('https://api.github.com/users/AngeloRWolff/repos')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                var gitHubElements = [];
+                var index = 10001;
+                console.log(data.name);
+                for (const key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        const element = data[key];
+                        gitHubElements.push(
+                            React.createElement('div', {
+                                style: gitHubElementContainer,
+                                key: index,
+                            }, this.gitHubTitle(element.name), this.gitHubLink(element.clone_url))
+                        )
+                        index++;
+                    }
+                }
+                this.setState({ hitHubElements: gitHubElements })
+
+            })
+            .catch(error => console.error(error))
+
+
+    }
+
+    _startAnimation() {
+        console.log('animation started')
+        var timer = setInterval(function () {
+            try {
+                var context = document.getElementById('context');
+                var animationBlock = document.createElement('gh');
+                var size = getRandomSize(context.clientHeight, context.clientWidth);
+                var location = getRandomLocation(context.clientWidth, context.clientHeight);
+
+                animationBlock.style.width = `${size}px`;
+                animationBlock.style.position = "absolute"
+                animationBlock.style.backgroundColor = "#25232c"
+                animationBlock.style.height = `${size}px`;
+                animationBlock.style.left = location.xLoc + "px";
+                animationBlock.style.top = location.yLoc + "px";
+                animationBlock.style.zIndex = -100;
+
+                document.body.appendChild(animationBlock);
+                fadeAnimation(animationBlock);
+            }
+            catch (err) {
+                console.log(err)
+            };
+            //alert(`${context.clientWidth} x ${context.clientHeight}`);
+        }, 100);
+    }
+
+
+
+
+
+
+    play() {
+        console.log('playing name')
+        document.getElementById('playName').play();
+    }
     render() {
+
         const x = this.state.x;
         const y = this.state.y;
         const gameOn = this.state.gameOn;
         return (
-            <div style = {{height : '20px'}}>
-            <div id= "coords"></div>
-         
-       
-             
-            <button onClick = {this._startAnimation}>Click To Start Animation</button>       
-            {this.state.gameOn ? <div id = "touchpane" style = {{opacity : "0%"}} className = "Fit" onMouseMove={this._onMouseMove.bind(this)}> </div> : null}
+            <div style={{ textAlign: 'center', height: window.innerHeight, minHeight: '600px', }}>
+                <div id="coords"></div>
+                <audio id="playName" src={name}></audio>
+                <div className='orbit'>
+                    <div style={{ transform: 'translateX(-15px)', display: 'inline-block' }}>Hello, my name is</div>
+                    <div style={{ transform: 'translateX(-10px)', display: 'inline-block', color: '#1593b3' }}> Angelo Wolff</div>
+                    <img style={{ transform: 'translateX(-10px)', marginLeft: '5px', position: 'absolute', width: '30px', height: '30px' }} src={voiceIcon} onClick={this.play}></img>
+                </div>
+                <div className = "inText">Download my document cv below</div>
+                <button className = 'download'>
+                        <img src = {downloadIcon} className = 'download-img'></img>Download CV.PDF
+                    </button>
+                    <section style = {{height:'40px'}}></section>
+                
 
-            <div className="diamond-narrow"></div>
+
+               
+                   
+                <section style = {{height:'40px'}}></section>
+                
+                <div className = "inText">View my other github projects</div>
+                <div className='container'>
+                    {this.state.hitHubElements}
+                </div>
+
+                <div>
+                <button className = 'download'>
+                        <img src = {downloadIcon} className = 'download-img'></img>Download This Project
+                    </button>
+
+                    
+                    </div>
             </div>
 
-          
+
         );
+
     }
+
 }
 
+/*
+Boundcing Circle animation
+   <div className = 'small-ball'></div>
+             <div className = 'small-ball2'></div>
+             <div className = 'small-ball3'></div>
 
+contact href 
+     <img style = {{marginRight: '5px',width: '50px' , height: '50px'}} src = {githubIcon}></img>
+            <img style = {{marginRight: '5px',width: '50px' , height: '50px'}}src = {facebookIcon}></img>
+            <img style = {{marginRight: '5px',width: '50px' , height: '50px'}}src = {youtubeIcon}></img>  
+
+
+*/
 document.onkeydown = checkKey;
 
-function getRandomSize(height)
-{
-    return Math.random() * height/5 +20;
+function getRandomSize(height) {
+    return Math.random() * height / 5 + 20;
 }
-function getRandomLocation(width, height)
-{
+function getRandomLocation(width, height) {
     var location = {
-        xLoc: Math.random()*width,
-        yLoc: document.documentElement.scrollTop + Math.random()*height
+        xLoc: Math.random() * width,
+        yLoc: document.documentElement.scrollTop + Math.random() * height
     }
     return location;
 }
-function fadeAnimation(element)
-{
-    try
-    {
-    var opacity = 1;  // initial opacity
-    var timer = setInterval(function (error) {    
-        
-        if (opacity <= 0.01){
-            clearInterval(timer);
-            element.style.display = 'none';
-            element.remove();
-        }
-        element.style.opacity = opacity;
-     
-        element.style.filter = 'alpha(opacity=' + opacity * 100 + ")";
-        opacity -= opacity * 0.01;
-        
-    }, 10)
-}catch{
+function fadeAnimation(element) {
+    try {
+        var opacity = 1;  // initial opacity
+        var timer = setInterval(function (error) {
 
-}
+            if (opacity <= 0.01) {
+                clearInterval(timer);
+                element.style.display = 'none';
+                element.remove();
+            }
+            element.style.opacity = opacity;
+
+            element.style.filter = 'alpha(opacity=' + opacity * 100 + ")";
+            opacity -= opacity * 0.01;
+
+        }, 10)
+    } catch{
+
+    }
 }
 
-function absoluteMinumumSize(size, width, height)
-{
+function absoluteMinumumSize(size, width, height) {
 
 }
 
@@ -258,9 +321,8 @@ function checkKey(e) {
 
 
 
-function createAnimationObject()
-{
-  
+function createAnimationObject() {
+
 }
 
 

@@ -16,10 +16,14 @@ import cssIcon from '..//assets/svg/language-icons/css.svg'
 //png imports
 //import reactLogo from '../assets/images/'
 import databasesLogo from '../assets/images/databases.png'
-
+import serverLogo from '../assets/images/server.png'
+import osLogo from '../assets/images/os.png'
+import ideLogo from '../assets/images/ide.png'
+import './About.css'
 class Home extends Component {
   constructor(props, context) {
     super(props, context);
+    
   }
   
   //create welcome message to introduce language skillset
@@ -44,36 +48,43 @@ class Home extends Component {
     </div>
     )
   }
-
+  checkView()
+    {  
+        setInterval(function () {
+          console.log(this.props.showing)
+        }.bind(this), 1000)
+    }
   //rendering of the about.js page
   render() {
     return (
       <div>
-      
-      <div style = {{textAlign: 'center', height: window.innerHeight, minHeight: '600px', }}>
-        {this.languageSkillsetMessage()}
+     
+      <div id = 'graph' style = {{textAlign: 'center', height: window.innerHeight, minHeight: '800px', }}>
+        <section style = {{height:'20px'}}></section>
+        <div className = 'inText'>My <div className = 'name'>language</div> skillset </div> 
         <div>
-        <GraphItem icon = {csIcon}    delay = {0}   value = {95} duration = {1000}  title = 'C#'/>
-        <GraphItem icon = {javaIcon}  delay = {100} value = {90} duration = {1000}  title = 'Java'/>
-        <GraphItem icon = {jsIcon}    delay = {200} value = {85} duration = {1000}  title = 'Javascript'/>
-        <GraphItem icon = {pyIcon}    delay = {300} value = {80} duration = {1000}  title = 'Python'/>   
-        <GraphItem icon = {cppIcon}   delay = {400} value = {65} duration = {1000}  title = 'C++'/>
-        <GraphItem icon = {htmlIcon}  delay = {500} value = {45} duration = {1000}  title = 'HTML'/>
-        <GraphItem icon = {cssIcon}   delay = {600} value = {40} duration = {1000}  title = 'CSS'/>   
+        <GraphItem icon = {csIcon}    delay = {0}   value = {95}     title = 'C#'/>
+        <GraphItem icon = {javaIcon}  delay = {100} value = {90}    title = 'Java'/>
+        <GraphItem icon = {jsIcon}    delay = {200} value = {85}     title = 'Javascript'/>
+        <GraphItem icon = {pyIcon}    delay = {300} value = {80}     title = 'Python'/>   
+        <GraphItem icon = {cppIcon}   delay = {400} value = {65}     title = 'C++'/>
+        <GraphItem icon = {htmlIcon}  delay = {500} value = {45}      title = 'HTML'/>
+        <GraphItem icon = {cssIcon}   delay = {600} value = {40}    title = 'CSS'/>   
         </div>
 
        
         <div style = {{paddingTop : "10%"}}>
-        {this.greetingMessage()}
-        <FlipCard image = {databasesLogo} title = {"Databases"} itemlist = {['Helow', 'World', 'g', 'g',]} />
-        <FlipCard image = {databasesLogo} title = {"Databases"} itemlist = {['g', 'bigfat', 'g', 'g',]} />
-        <FlipCard image = {databasesLogo} title = {"Databases"} itemlist = {['g','G','g','g']} /> 
-        <FlipCard image = {databasesLogo} title = {"Databases"} itemlist = {[' ',' ',' ',' ']} />       
+        <div className = 'inText'>My <div className = 'name'>technology</div> skillset </div>
+        <FlipCard image = {databasesLogo} title = {"Databases"} itemlist = {['MongoDB', 'MySQL', 'MemSQL', 'SQLite',]} />
+        <FlipCard image = {serverLogo} title = {"Servers"} itemlist = {['Apache', 'Oracle', 'Azure', '‎‎‏‏‎ ‎',]} />
+        <FlipCard image = {osLogo} title = {"OpSys"} itemlist = {['Windows XP/2000/95','Windows 7/8/10','Kali Linux','Lubuntu']} /> 
+        <FlipCard image = {ideLogo} title = {"IDEs"} itemlist = {['Visual Studio','‎‎‏‏‎PyCharm','‎‎‏‏‎Android Studio','IntelliJ‎‎‏‏‎‎']} />       
         </div> 
       </div>  
       </div>     
     );
   }
 }
+
 
 export default Home;
