@@ -18,7 +18,7 @@ var underline = {
     height: '5px',
     backgroundColor: '#2e5f75'
 }
-class Menu extends Component {
+class MenuTitle extends Component {
     render() {
         return (
             <div>
@@ -32,4 +32,4 @@ class Menu extends Component {
     }
 }
 
-export default Menu;
+export default MenuTitle;
