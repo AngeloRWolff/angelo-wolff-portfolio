@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
-var menu = {
-  
+var menuStyle = {
     lineHeight: "250%",
     display: 'inline-block',
     width: '100%',
@@ -23,7 +22,7 @@ class Menu extends Component {
     render() {
         return (
             <div>
-            <div style = {menu}>
+            <div style = {menuStyle}>
                 {this.props.title}
                 
             </div>
