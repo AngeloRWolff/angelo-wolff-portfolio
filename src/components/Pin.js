@@ -31,7 +31,10 @@ class Pin extends Component {
             style : pinStyle,
         }
     }
-
+    openPage(link) {
+        console.log('opening link');
+        window.open(link, '_blank')
+    }
     createPin()
     {
         return React.createElement('img',{
@@ -41,7 +44,7 @@ class Pin extends Component {
     }
     render() {
         return (
-            <div style = {container}>
+            <div onClick = {()=>this.openPage(this.props.link)} style = {container}>
                 {this.createPin()}
                 <div style = {title}>{this.props.title}</div>
             </div>

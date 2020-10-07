@@ -233,18 +233,7 @@ ul {
 }
 /* Change the color of links on hover */
 a:link, a:visited {
-  border: #be2121;
-  color: #FFFFFF;
-  font-weight: normal;
-  padding: 20px 40px;
-  text-align: center;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  text-decoration: #7a0202; 
-  font-size: 16px;
-  cursor: pointer;
-  background-size:contain;
-  display: inline-block;
+
   
 }
 
@@ -264,8 +253,7 @@ a:link, a:visited {
   
 }
 a:hover, a:active {
-  background-color: #0b5568;
-  background-color: #1593b3;
+ 
 }
 .seperator{
   width: 100%;

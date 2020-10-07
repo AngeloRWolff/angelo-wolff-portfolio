@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Index from '..//..//index'
 import {progressBar, iconStyle, titleStyle, labelStyle} from './GraphItem.styling.js';
 import {progressContainer, iconContainer, barContainer} from './GraphItem.containers.js'
 
@@ -16,19 +15,14 @@ class GraphItem extends Component {
     }
 
     checkView()
-    {
-        //var g = React.findDOMNode(this.refs.aboutpage).value   
-       
+    {    
        var check =  setInterval(function () {
            var g =  document.getElementById('graph').getBoundingClientRect()
-           //console.log(g)
             if (g.y -500 < 0)
             {
                 this.setState({isInView: true})
                 clearInterval(check);
-            }
-        
-           
+            }          
         }.bind(this), 100)
     }
     /*
@@ -43,6 +37,10 @@ class GraphItem extends Component {
         return progress
     }
 
+    id()
+    {
+        return Math.random();
+    }
     //create the icon displayed for the language [source: props.icon]
     createIcon() {
         var icon = React.createElement('img', {
@@ -81,9 +79,9 @@ class GraphItem extends Component {
         
        var checkView =  setInterval(function () {
 
-            if (this.state.isInView == true)
+            if (this.state.isInView === true)
             {
-                setInterval(function () {    
+                setTimeout(function () {    
             this.setState({
                 progressStyle: {
                     ...this.state.progressStyle,

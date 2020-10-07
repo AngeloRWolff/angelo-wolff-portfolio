@@ -1,4 +1,5 @@
 export const progressContainer = {
+    transform: 'translateX(-10px)',
     left: "-50px",
     margin: "auto",
     width: "100%",
