@@ -109,7 +109,9 @@ class Idle extends Component {
 
 
     }
-    
+    playName(){
+        document.getElementById('playName').play();
+    }
 
   
     render() {
@@ -120,7 +122,7 @@ class Idle extends Component {
                 <div className='orbit'>
                     <div style={{ transform: 'translateX(-15px)', display: 'inline-block' }}>Hello, my name is</div>
                     <div style={{ transform: 'translateX(-10px)', display: 'inline-block', color: '#1593b3' }}> Angelo Wolff</div>
-                    <img style={{ transform: 'translateX(-10px)', marginLeft: '5px', position: 'absolute', width: '30px', height: '30px' }} src={voiceIcon} onClick={this.play} alt = 'v-icon'></img>
+                    <img style={{ transform: 'translateX(-10px)', marginLeft: '5px', position: 'absolute', width: '30px', height: '30px' }} src={voiceIcon} onClick={this.playName} alt = 'v-icon'></img>
                 </div>
                 <div  className = "inText">Download my document cv below</div>
                 <a href={cv} download>
